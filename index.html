@@ -61,10 +61,6 @@ audio{width:100%;margin:10px 0}
 ul{padding-left:1.2em}
 li{margin-bottom:6px}
 .poem p{margin:0 0 20px}
-.scan{display:grid;grid-template-columns:repeat(11,1fr);text-align:center;margin:24px 0 6px;border-top:1px solid #000;border-bottom:1px solid #000;padding:16px 0 12px}
-.scan span{display:block;font-size:clamp(22px,5vw,36px);line-height:1.1}
-.scan i{display:block;font-size:clamp(14px,2.2vw,18px)}
-.scan .cut{border-left:1px solid #000}
 table{border-collapse:collapse}
 td{padding:4px 24px 4px 0;vertical-align:top}
 td:first-child{font-weight:700}
@@ -93,22 +89,9 @@ footer{border-top:1px solid #000;margin-top:56px;padding-top:20px;padding-bottom
 <!-- Your photo: upload it as images/photo.jpg. If the file is missing, nothing shows. -->
 <img class="portrait" src="images/photo.jpg" alt="Koushik Vaddi" onerror="this.remove()">
 
-<p>I work on prosodic weight and meter: how languages count syllables and morae, how verse uses that count, and how to model it formally, computationally and quantitatively. My main data come from Dravidian and Indo-Aryan, especially Telugu and Vedic Sanskrit, with Ancient Greek for comparison.</p>
+<p>I am an undergraduate at Stony Brook University and a research assistant to Jeffrey Heinz. My research is in phonology, particularly its interfaces with morphology, prosody and phonetics. I am most interested in tone, stress and meter, and in modelling these phenomena computationally, including for natural language processing.</p>
 
-<div class="scan" aria-label="Scansion of Rigveda 10.129.1a">
-  <div><span>–</span><i>nā</i></div>
-  <div><span>⏑</span><i>sa</i></div>
-  <div><span>–</span><i>dā</i></div>
-  <div><span>–</span><i>sīn</i></div>
-  <div class="cut"><span>–</span><i>no</i></div>
-  <div><span>⏑</span><i>sa</i></div>
-  <div><span>–</span><i>dā</i></div>
-  <div><span>–</span><i>sīt</i></div>
-  <div><span>⏑</span><i>ta</i></div>
-  <div><span>–</span><i>dā</i></div>
-  <div><span>–</span><i>nīm</i></div>
-</div>
-<p class="small">Ṛgveda 10.129.1a, <i>nā́sad āsīn nó sád āsīt tadā́nīm</i>: a triṣṭubh line of eleven syllables, with a break after the fourth and the cadence – ⏑ – –.</p>
+<p>The questions behind this work concern variation, the roles of rules and constraints in the grammar, the mental representation of phonological knowledge, and historical change. Most of my data come from Telugu and Vedic Sanskrit, with Ancient Greek for comparison.</p>
 
 
 <section id="research">
@@ -118,26 +101,21 @@ footer{border-top:1px solid #000;margin-top:56px;padding-top:20px;padding-bottom
 <p class="small">Manuscript, 2026</p>
 <p>Medial vowels in Telugu verb stems alternate: <i>kuduru-</i>, <i>kudiri-</i>, <i>kudere-</i>. Earlier accounts store these vowels and use stress to explain which of them harmonize. I argue that they are not stored at all. The roots are consonant clusters, syllabification leaves stray the consonants that can't be licensed as moraic codas, anaptyxis gives each one a monomoraic vowel, and copy harmony gives those vowels, and only those, the quality of a following short <i>i</i> or <i>e</i>. The account predicts that variants of a word differ in syllable count but not mora count. Each rule is classified as input or output strictly local, and the full grammar is implemented and tested on 70 forms.</p>
 <!-- Add the PDF only once Prof. Heinz has signed off on the version to share. -->
-<p><a href="papers/vaddi-telugu-anaptyxis.pdf">Paper (PDF)</a> · <a href="https://github.com/KoushikVaddi">Pynini implementation</a></p>
+<p><a href="papers/vaddi-telugu-anaptyxis.pdf">Paper (PDF)</a> · <a href="https://github.com/koushikkvofficial">Pynini implementation</a></p>
 
 <h3>Computational phonology benchmark</h3>
 <p class="small">With Prof. Jeffrey Heinz, Institute for Advanced Computational Science, Stony Brook</p>
 <p>A benchmark of morphophonological data for testing models that learn phonological maps. I standardized transcription and formatting across the 66 languages in the dataset and wrote literature reviews for 21 of them: Ancient Greek, Catalan, Farsi, Finnish, German, Hungarian, Icelandic, Indonesian, Japanese, Kikuria, Lardil, Lithuanian, Makonde, Modern Greek, Mohawk, Saami, Somali, Swahili, Telugu, Turkish and Vedic Sanskrit. Each review covers the inventory, allophony and allomorphy, feature system and processes, compared against textbook data, with rules formulated for each and finite-state implementations under way.</p>
 
-<h3>Interests</h3>
-<ul>
-  <li>Prosodic weight, the mora, and the evidence verse gives for both</li>
-  <li>Meter and text-setting, including gradience in how strictly a line follows its meter</li>
-  <li>Subregular and finite-state models of phonology, and how phonotactics relates to alternations</li>
-  <li>Learning simulations of sound change</li>
-  <li>Vedic accent and recitation as phonetic evidence</li>
-</ul>
+<h3>Other research experience</h3>
+<p class="small">Department of Electrical and Computer Engineering, with Prof. Shan Lin</p>
+<p>Computer vision for clinical video: a pipeline that tracks hand and body keypoints in videos of patients with Alzheimer's disease, and an annotation scheme for labelling their activities.</p>
 </section>
 
 
 <section id="recitation">
 <h2>Recitation</h2>
-<p>I recite Greek and Vedic verse in reconstructed pronunciation, in the meter, and with modal melody informed by what is known of ancient practice. The long-term aim is to record the whole <i>Iliad</i> and the whole <i>Ṛgveda</i>. The reconstructions are my own working choices, and each recording notes the main ones.</p>
+<p>I record recitations of Homeric and Vedic verse in reconstructed pronunciation, following the meter and using modal melody. I am working toward complete recordings of the <i>Iliad</i> and the <i>Ṛgveda</i>.</p>
 
 <h3>Homer, <i>Iliad</i></h3>
 <p class="small">Dactylic hexameter, reconstructed pronunciation. Featured on <a href="https://languagelog.ldc.upenn.edu/">Language Log</a>.</p>
@@ -159,6 +137,8 @@ footer{border-top:1px solid #000;margin-top:56px;padding-top:20px;padding-bottom
 
 <h3>The Nāsadīya Sūkta (Ṛgveda 10.129)</h3>
 <p class="small">Translated with attention to etymology, syntax and pragmatics, in an English approximation of triṣṭubh. The vertical bar marks the caesura.</p>
+<!-- Your recording: upload it as audio/nasadiya.mp3. Until then the player stays hidden. -->
+<audio controls preload="metadata" src="audio/nasadiya.mp3" onerror="this.remove()"></audio>
 <div class="poem">
 <p>Not the unreal | not then the real had been yet,<br>
 not the night sky | not the vault there beyond which;<br>
@@ -197,32 +177,44 @@ Perchance he knoweth | What if perchance he doeth not?</p>
 </div>
 
 <h3>A poem in reconstructed Proto-Indo-European</h3>
-<p class="small">A retelling of the king who prays to Werunos for a son, the story of <i>The King and the God</i>, continued. Laryngeals are written with phonetic values: ʔ for h₁, χ for h₂, ʁ for h₃.</p>
+<p class="small">A retelling of the king who prays to Werunos for a son, the story of <i>The King and the God</i>, continued. Laryngeals are written with phonetic values: ʔ for h₁, χ for h₂, ʁ for h₃. The vertical bar marks the caesura.</p>
+<!-- Your recording: upload it as audio/pie-poem.mp3. Until then the player stays hidden. -->
+<audio controls preload="metadata" src="audio/pie-poem.mp3" onerror="this.remove()"></audio>
 <div class="poem">
-<p>só ʁréːkʲs sénos, ʔjósjo súχnus né ʔeːst kʷís,<br>
-gʲʱéwtoːrm prkʲskʲet, "nú gʲnʔjojto súχnus!";<br>
-pró gʲʱéwtoːres, septḿ χindʱenti bʱolɡʲʱís,<br>
-dejwóm wérunom, ʔjégʲetχoːj kʷe wekʲsent.</p>
+<p>só ʁréːkʲs sénos | ʔjósjo súχnus né ʔéːst kʷís,<br>
+só gʲʱéwtorms wekʷt | "nú gʲnʔjojto súχnus!";<br>
+tój gʲʱéwtores | septḿ χindʱenti bʱolɡʲʱís,<br>
+dejwóm wérunom | ʔjégʲetχoːj kʷe wekʲsent.</p>
 
-<p>diwés χrétoj, léwkonts kʷe lowkéjents kʷe,<br>
-suχél né diwjós, wérunos pró prkʲskʲet:<br>
-"ʁréːɡʲ moj priχe, wlʔtóm ʔjód trís wlnʔswo<br>
-χrtóm wlnʔswo, wlʔtóm ʔójwom ʔésti".</p>
+<p>diwés χrétej | léwkonts kʷe lowkéjents kʷe,<br>
+suχél né diwjós | wérunos swé wewkʷed:<br>
+"ʁréːɡʲ moj prixe | welʔóm ʔjóm trís wlnʔswo<br>
+χrtóm wlnʔswo | welʔóm ʔójwom ʔésti".</p>
 
-<p>septḿdʱuɡʲχteːr, só ʁreːkʲs ulnʔto trís:<br>
-"súχnus súχnus, ɡʲnʔjojto súχnus ʔójwos!"<br>
-só kʲékʲluwoːns tóm, ʔsuméneːs ʔsumńsdʱeʔs,<br>
-wérunos wewkʷed, "tóteχ ʔestu" dejwós.</p>
+<p>septḿdʱuɡʲχteːr | só ʁréːkʲs ulnʔto trís:<br>
+"súχnus súχnus | ɡʲnʔjojto súχnus ʔójwos!"<br>
+só kʲékʲluwoːns tóm | ʔsuméneːs ʔsumńsdʱeʔs,<br>
+wérunos wewkʷed | "tóteχ ʔestu" dejwós.</p>
 
-<p>ʔnéwn méːʔnses, péri kʷekʷlʔeːr wlnʔḿʔnom,<br>
-ʁréːgʲm ʔsudékʲsom, χrtopéχm nputlóm.<br>
-dejwíχ pótniχ, gʲegʲone septmméχteːr,<br>
-suχél né súχnum, diwióm wélʔistχom.</p>
+<p>ʔnéwn méːʔnses | péri kʷekʷlʔeːr wlʔnmʔnóm,<br>
+ʁréːɡʲm ʔsudékʲsom | χrtopéχm nputlóm<br>
+dejwíχ ʁréːɡʲniχ | ɡʲeɡʲone septmméχteːr,<br>
+suχél né súχnum | diwióm wélʔistχom.</p>
 
-<p>podéj podej, ʔénu pχtréʔ kʷĺʔesjents,<br>
-diwéj diwej, só ʔsuwíʔros prowerdʱet.<br>
-só swekʲsdékʲm, ɡʲʱimóχom ʔébʱewχet,<br>
-kʲmtóm ɡʷʱentóːr, ndʱɡʷʱejókʲleweːs kʷe.</p>
+<p>dédrkʲwoːs ʁréːkʲs | wérunosjo prótiʁkʷom<br>
+só ɡʲʱéwtorms wekʷt | ɡʲnʔtós súχnus ʔesti<br>
+tój ɡʲʱéwtores | septḿ χindʱenti bʱolɡʲʱís<br>
+dejwóm wérunom | ʔjégʲetχoːj kʷe wekʲsent.</p>
+
+<p>"médʱu sówmom | medʱu ʔépos kʷe ʔńɡʷni<br>
+médʱu ɡʲʱewís | médʱu díkʲes kʷétesres<br>
+médʱu xnérms | médʱu ɡʷówms kʷe ʔékʲwoms<br>
+médʱu nos wiʔróms | modejentu dejwóːs"</p>
+
+<p>pedéj pedej | ʔénu pχtréʔ kʷelʔkʷlʔents ,<br>
+diwéj diwej | ʔjos ʔsuwíʔros prowérdʱet.<br>
+suekʲsdékʲm χneːr | ɡʲʱímoχom só bʱewχet,<br>
+kʲmtóm ɡʷʱentóːr kʷe | ndʱɡʷʱejó-kʲleweːs kʷe.</p>
 </div>
 </section>
 
@@ -242,7 +234,7 @@ kʲmtóm ɡʷʱentóːr, ndʱɡʷʱejókʲleweːs kʷe.</p>
 </main>
 
 <footer>
-  <p><a href="mailto:koushikkvofficial@gmail.com">koushikkvofficial@gmail.com</a> · <a href="https://github.com/KoushikVaddi">GitHub</a> · <a href="https://www.linkedin.com/in/koushikkv">LinkedIn</a> · <a href="cv.pdf">CV (PDF)</a></p>
+  <p><a href="mailto:koushikkvofficial@gmail.com">koushikkvofficial@gmail.com</a> · <a href="https://github.com/koushikkvofficial">GitHub</a> · <a href="https://www.linkedin.com/in/koushikkv">LinkedIn</a> · <a href="cv.pdf">CV (PDF)</a></p>
   <p>Koushik Vaddi · Stony Brook, New York</p>
 </footer>
 
