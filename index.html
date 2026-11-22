@@ -7,84 +7,76 @@
 <meta name="description" content="Koushik Vaddi: phonology, prosodic weight and meter, computational phonology; Dravidian and Indo-Aryan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<!--
+  HOW TO EDIT THIS PAGE
+  ---------------------
+  Text:   change the words between the tags, e.g. <p>your text</p>.
+          A new paragraph is a new <p> ... </p>. Bold: <b>word</b>. Italic: <i>word</i>.
+          A line break inside a poem: <br>
+
+  Link:   <a href="https://example.com">words to click</a>
+
+  Image:  upload the picture into an "images" folder in the repository, then:
+          <figure>
+            <img src="images/my-photo.jpg" alt="what the picture shows">
+            <figcaption>Optional caption</figcaption>
+          </figure>
+
+  Audio:  upload an .mp3 into an "audio" folder, then:
+          <audio controls src="audio/my-recording.mp3"></audio>
+
+  YouTube video: on YouTube click Share > Embed, and paste the code you get
+          inside <div class="video"> ... </div>, like this:
+          <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Video title" allowfullscreen></iframe></div>
+
+  New section: copy a whole <section> ... </section> block and change it.
+  If you add a section, add a link to it in the <nav> at the top too.
+-->
+
 <style>
-/* VOICE  quiet academic homepage: plain, white, careful, a little scholarly
-   IDEA   a well-set philological edition page, rubricated like a manuscript (red marks the metrical and alternating units, as in his own paper)
-   PICTURE a large scansion of RV 10.129.1a: heavy/light marks over syllables, caesura and cadence shown
-   COLOUR white ground, near-black ink, one rubric red; night: deep charcoal with a softer red
-   TYPE   Gentium Book Plus (built for linguists: IPA, Greek, diacritics) for everything read; Inter for nav and small labels
-   LAYOUT one centred reading column (~760px); first screen = name, interests, scansion; phone stacks naturally */
-:root{color-scheme:light dark;--bg:light-dark(#ffffff,#141414);--ink:light-dark(#141414,#ececec);--soft:light-dark(#5b5b5b,#a9a9a9);--rule:light-dark(#e4e4e4,#2c2c2c);--red:light-dark(#b3261e,#ff7a6e);--tint:light-dark(#faf7f6,#1b1a1a)}
-:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
-*{box-sizing:border-box;min-width:0}
-html{scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Gentium Book Plus","Gentium Plus","Charis SIL","Noto Serif",Georgia,serif;overflow-x:clip}
-a{color:var(--red);text-decoration-thickness:1px;text-underline-offset:3px}
+body{margin:0;background:#fff;color:#000;font:18px/1.65 "Gentium Book Plus",Georgia,"Times New Roman",serif}
+*{box-sizing:border-box}
+main,nav div,footer{max-width:740px;margin:0 auto;padding:0 20px}
+a{color:#000;text-decoration:underline;text-underline-offset:3px}
 a:hover{text-decoration-thickness:2px}
-a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:2px}
-img{max-width:100%;display:block}
-.wrap{max-width:760px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left,0px))}
-nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
-nav .wrap{display:flex;flex-wrap:wrap;gap:4px 22px;align-items:center;min-height:52px;font:500 14px/1 Inter,system-ui,sans-serif}
-nav .home{font-weight:600;color:var(--ink);text-decoration:none;margin-right:auto}
-nav a:not(.home){color:var(--soft);text-decoration:none;padding:10px 0}
-nav a:not(.home):hover{color:var(--ink)}
-header{padding:clamp(40px,7vw,84px) 0 28px}
-.who{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:start}
-h1{font-size:clamp(38px,6vw,52px);line-height:1.05;letter-spacing:-.02em;margin:0 0 10px;font-weight:700}
-.role{font:500 15px/1.4 Inter,system-ui,sans-serif;color:var(--soft);margin:0 0 22px}
-.portrait{width:120px;height:120px;border-radius:50%;object-fit:cover;border:1px solid var(--rule)}
-.lede{font-size:19px;margin:0}
-.scan{margin:34px 0 0;padding:26px 0 18px;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
-.verse{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));column-gap:2px}
-.syl{text-align:center;position:relative}
-.syl .m{display:block;font-size:clamp(26px,5vw,44px);line-height:1;height:1.1em;color:var(--ink)}
-.syl .t{display:block;font-size:clamp(14px,2.2vw,19px);font-style:italic;margin-top:8px}
-.syl.cad .m{color:var(--red)}
-.syl.cut{border-left:2px solid var(--red)}
-.syl .n{display:block;font:500 11px/1 Inter,system-ui,sans-serif;color:var(--soft);margin-top:10px}
-.scan figcaption{font-size:15px;color:var(--soft);margin-top:16px}
-.scan figcaption b{color:var(--red);font-weight:400}
-section{padding:38px 0 8px}
-h2{font-size:30px;line-height:1.1;letter-spacing:-.01em;margin:0 0 18px;padding-top:6px;border-top:1px solid var(--ink);padding-top:22px}
-h3{font-size:20px;line-height:1.3;margin:28px 0 6px}
+nav{border-bottom:1px solid #000}
+nav div{display:flex;flex-wrap:wrap;gap:6px 22px;padding-top:16px;padding-bottom:16px}
+nav a{text-decoration:none}
+nav a:hover{text-decoration:underline}
+nav .home{font-weight:700;margin-right:auto}
+h1{font-size:46px;line-height:1.05;margin:56px 0 8px}
+h2{font-size:28px;line-height:1.2;margin:56px 0 16px;padding-top:20px;border-top:1px solid #000}
+h3{font-size:20px;line-height:1.3;margin:30px 0 4px}
 p{margin:0 0 14px}
-.meta{font:500 14px/1.5 Inter,system-ui,sans-serif;color:var(--soft);margin:0 0 10px}
-.links{display:flex;flex-wrap:wrap;gap:6px 18px;font:500 14px/1.4 Inter,system-ui,sans-serif;margin:8px 0 0}
-ul{padding-left:1.2em;margin:0 0 14px}
+.small{font-size:16px;color:#444}
+img{max-width:100%;height:auto;display:block}
+figure{margin:20px 0}
+figcaption{font-size:16px;color:#444;margin-top:6px}
+.portrait{width:150px;height:150px;object-fit:cover;border-radius:50%;margin:0 0 20px}
+audio{width:100%;margin:10px 0}
+.video{position:relative;aspect-ratio:16/9;margin:14px 0}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+ul{padding-left:1.2em}
 li{margin-bottom:6px}
-.item{padding:4px 0 22px;border-bottom:1px solid var(--rule)}
-.item:last-child{border-bottom:0}
-audio{width:100%;margin:12px 0 4px;height:40px}
-.poem{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 36px;margin:16px 0 8px}
-.poem p{margin:0;line-height:1.55}
-.ipa{font-size:17px}
-.trans p{margin:0 0 18px;line-height:1.55}
-.cz{color:var(--red);padding:0 .25em}
-.note{background:var(--tint);border-left:2px solid var(--red);padding:12px 16px;font-size:15.5px;margin:18px 0}
-dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px 24px;margin:0}
-dt{font:600 14px/1.6 Inter,system-ui,sans-serif;color:var(--soft)}
-dd{margin:0}
-footer{margin-top:40px;padding:28px 0 48px;border-top:1px solid var(--ink);font:400 14px/1.6 Inter,system-ui,sans-serif;color:var(--soft)}
-footer .links{margin:0 0 12px}
-@media(max-width:600px){
- body{font-size:16.5px}
- .who{grid-template-columns:minmax(0,1fr)}
- .portrait{order:-1;width:92px;height:92px}
- .poem{grid-template-columns:minmax(0,1fr)}
- dl{grid-template-columns:minmax(0,1fr);gap:2px}
- dd{margin-bottom:10px}
- .syl .n{display:none}
-}
-@media(prefers-reduced-motion:no-preference){.syl .m{transition:transform .2s}.verse:hover .syl .m{transform:translateY(-2px)}}
+.poem p{margin:0 0 20px}
+.scan{display:grid;grid-template-columns:repeat(11,1fr);text-align:center;margin:24px 0 6px;border-top:1px solid #000;border-bottom:1px solid #000;padding:16px 0 12px}
+.scan span{display:block;font-size:clamp(22px,5vw,36px);line-height:1.1}
+.scan i{display:block;font-size:clamp(14px,2.2vw,18px)}
+.scan .cut{border-left:1px solid #000}
+table{border-collapse:collapse}
+td{padding:4px 24px 4px 0;vertical-align:top}
+td:first-child{font-weight:700}
+footer{border-top:1px solid #000;margin-top:56px;padding-top:20px;padding-bottom:48px;font-size:16px}
+@media(max-width:600px){body{font-size:17px}h1{font-size:38px;margin-top:36px}td{display:block;padding:0}td:first-child{margin-top:10px}}
 </style>
 </head>
 <body>
 
-<nav aria-label="Sections">
-  <div class="wrap">
-    <a class="home" href="#top">Koushik Vaddi</a>
+<nav>
+  <div>
+    <a class="home" href="#">Koushik Vaddi</a>
     <a href="#research">Research</a>
     <a href="#recitation">Recitation</a>
     <a href="#verse">Verse</a>
@@ -93,198 +85,166 @@ footer .links{margin:0 0 12px}
   </div>
 </nav>
 
-<main class="wrap" id="top">
+<main>
 
-<header>
-  <div class="who">
-    <div>
-      <h1>Koushik Vaddi</h1>
-      <p class="role">Stony Brook University · Research assistant to Prof. Jeffrey Heinz</p>
-    </div>
-    <!-- Put a square photo next to this file named photo.jpg. If it is missing, it simply doesn't show. -->
-    <img class="portrait" src="photo.jpg" alt="Koushik Vaddi" onerror="this.remove()">
-  </div>
-  <p class="lede">I work on prosodic weight and meter: how languages count syllables and morae, how verse uses that count, and how to model it formally, computationally and quantitatively. My main data come from Dravidian and Indo-Aryan, especially Telugu and Vedic Sanskrit, with Ancient Greek for comparison.</p>
+<h1>Koushik Vaddi</h1>
+<p class="small">Stony Brook University · Research assistant to Prof. Jeffrey Heinz</p>
 
-  <figure class="scan" aria-label="Scansion of Rigveda 10.129.1a">
-    <div class="verse" id="verse"></div>
-    <figcaption>Ṛgveda 10.129.1a, <i>nā́sad āsīn nó sád āsīt tadā́nīm</i>. A triṣṭubh line: eleven syllables, a break after the fourth, and the fixed cadence <b>– ⏑ – –</b>.</figcaption>
-  </figure>
-</header>
+<!-- Your photo: upload it as images/photo.jpg. If the file is missing, nothing shows. -->
+<img class="portrait" src="images/photo.jpg" alt="Koushik Vaddi" onerror="this.remove()">
+
+<p>I work on prosodic weight and meter: how languages count syllables and morae, how verse uses that count, and how to model it formally, computationally and quantitatively. My main data come from Dravidian and Indo-Aryan, especially Telugu and Vedic Sanskrit, with Ancient Greek for comparison.</p>
+
+<div class="scan" aria-label="Scansion of Rigveda 10.129.1a">
+  <div><span>–</span><i>nā</i></div>
+  <div><span>⏑</span><i>sa</i></div>
+  <div><span>–</span><i>dā</i></div>
+  <div><span>–</span><i>sīn</i></div>
+  <div class="cut"><span>–</span><i>no</i></div>
+  <div><span>⏑</span><i>sa</i></div>
+  <div><span>–</span><i>dā</i></div>
+  <div><span>–</span><i>sīt</i></div>
+  <div><span>⏑</span><i>ta</i></div>
+  <div><span>–</span><i>dā</i></div>
+  <div><span>–</span><i>nīm</i></div>
+</div>
+<p class="small">Ṛgveda 10.129.1a, <i>nā́sad āsīn nó sád āsīt tadā́nīm</i>: a triṣṭubh line of eleven syllables, with a break after the fourth and the cadence – ⏑ – –.</p>
+
 
 <section id="research">
-  <h2>Research</h2>
+<h2>Research</h2>
 
-  <div class="item">
-    <h3>Anaptyxis and copy harmony in Telugu verb stems: a rule-based account of moraic licensing</h3>
-    <p class="meta">Manuscript, 2026</p>
-    <p>Medial vowels in Telugu verb stems alternate: <i>kuduru-</i>, <i>kudiri-</i>, <i>kudere-</i>. Earlier accounts store these vowels and use stress to explain which of them harmonize. I argue that they are not stored at all. The roots are consonant clusters, syllabification leaves stray the consonants that can't be licensed as moraic codas, anaptyxis gives each one a monomoraic vowel, and copy harmony gives those vowels, and only those, the quality of a following short <i>i</i> or <i>e</i>. The account predicts that variants of a word differ in syllable count but not mora count. Each rule is classified as input or output strictly local, and the full grammar is implemented and tested on 70 forms.</p>
-    <div class="links">
-      <!-- Add the PDF only once Prof. Heinz has signed off on the version to share. -->
-      <a href="papers/vaddi-telugu-anaptyxis.pdf">Paper (PDF)</a>
-      <a href="https://github.com/KoushikVaddi">Pynini implementation</a>
-    </div>
-  </div>
+<h3>Anaptyxis and copy harmony in Telugu verb stems: a rule-based account of moraic licensing</h3>
+<p class="small">Manuscript, 2026</p>
+<p>Medial vowels in Telugu verb stems alternate: <i>kuduru-</i>, <i>kudiri-</i>, <i>kudere-</i>. Earlier accounts store these vowels and use stress to explain which of them harmonize. I argue that they are not stored at all. The roots are consonant clusters, syllabification leaves stray the consonants that can't be licensed as moraic codas, anaptyxis gives each one a monomoraic vowel, and copy harmony gives those vowels, and only those, the quality of a following short <i>i</i> or <i>e</i>. The account predicts that variants of a word differ in syllable count but not mora count. Each rule is classified as input or output strictly local, and the full grammar is implemented and tested on 70 forms.</p>
+<!-- Add the PDF only once Prof. Heinz has signed off on the version to share. -->
+<p><a href="papers/vaddi-telugu-anaptyxis.pdf">Paper (PDF)</a> · <a href="https://github.com/KoushikVaddi">Pynini implementation</a></p>
 
-  <div class="item">
-    <h3>Computational phonology benchmark</h3>
-    <p class="meta">With Prof. Jeffrey Heinz, Institute for Advanced Computational Science, Stony Brook</p>
-    <p>A benchmark of morphophonological data for testing models that learn phonological maps. I standardized transcription and formatting across the 66 languages in the dataset and wrote literature reviews for 21 of them: Ancient Greek, Catalan, Farsi, Finnish, German, Hungarian, Icelandic, Indonesian, Japanese, Kikuria, Lardil, Lithuanian, Makonde, Modern Greek, Mohawk, Saami, Somali, Swahili, Telugu, Turkish and Vedic Sanskrit. Each review covers the inventory, allophony and allomorphy, feature system and processes, compared against textbook data, with rules formulated for each and finite-state implementations under way.</p>
-  </div>
+<h3>Computational phonology benchmark</h3>
+<p class="small">With Prof. Jeffrey Heinz, Institute for Advanced Computational Science, Stony Brook</p>
+<p>A benchmark of morphophonological data for testing models that learn phonological maps. I standardized transcription and formatting across the 66 languages in the dataset and wrote literature reviews for 21 of them: Ancient Greek, Catalan, Farsi, Finnish, German, Hungarian, Icelandic, Indonesian, Japanese, Kikuria, Lardil, Lithuanian, Makonde, Modern Greek, Mohawk, Saami, Somali, Swahili, Telugu, Turkish and Vedic Sanskrit. Each review covers the inventory, allophony and allomorphy, feature system and processes, compared against textbook data, with rules formulated for each and finite-state implementations under way.</p>
 
-  <div class="item">
-    <h3>Interests</h3>
-    <ul>
-      <li>Prosodic weight, the mora, and the evidence verse gives for both</li>
-      <li>Meter and text-setting, including gradience in how strictly a line follows its meter</li>
-      <li>Subregular and finite-state models of phonology, and how phonotactics relates to alternations</li>
-      <li>Learning simulations of sound change</li>
-      <li>Vedic accent and recitation as phonetic evidence</li>
-    </ul>
-  </div>
+<h3>Interests</h3>
+<ul>
+  <li>Prosodic weight, the mora, and the evidence verse gives for both</li>
+  <li>Meter and text-setting, including gradience in how strictly a line follows its meter</li>
+  <li>Subregular and finite-state models of phonology, and how phonotactics relates to alternations</li>
+  <li>Learning simulations of sound change</li>
+  <li>Vedic accent and recitation as phonetic evidence</li>
+</ul>
 </section>
+
 
 <section id="recitation">
-  <h2>Recitation</h2>
-  <p>I recite Greek and Vedic verse in reconstructed pronunciation, in the meter, and with modal melody informed by what is known of ancient practice. The long-term aim is to record the whole <i>Iliad</i> and the whole <i>Ṛgveda</i>. The reconstructions are my own working choices, and each recording notes the main ones.</p>
+<h2>Recitation</h2>
+<p>I recite Greek and Vedic verse in reconstructed pronunciation, in the meter, and with modal melody informed by what is known of ancient practice. The long-term aim is to record the whole <i>Iliad</i> and the whole <i>Ṛgveda</i>. The reconstructions are my own working choices, and each recording notes the main ones.</p>
 
-  <div class="item">
-    <h3>Homer, <i>Iliad</i></h3>
-    <p class="meta">Dactylic hexameter, reconstructed pronunciation · featured on <a href="https://languagelog.ldc.upenn.edu/">Language Log</a></p>
-    <audio controls preload="metadata" src="audio/iliad-1.mp3"></audio>
-    <div class="links"><a href="https://www.youtube.com/">Watch on YouTube</a></div>
-  </div>
+<h3>Homer, <i>Iliad</i></h3>
+<p class="small">Dactylic hexameter, reconstructed pronunciation. Featured on <a href="https://languagelog.ldc.upenn.edu/">Language Log</a>.</p>
+<!-- Replace VIDEO_ID with the code from your YouTube link (the part after watch?v=) -->
+<div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Iliad recitation" allowfullscreen></iframe></div>
 
-  <div class="item">
-    <h3>Homer, <i>Odyssey</i>, Book 1</h3>
-    <p class="meta">About 35 minutes · reconstructed early Archaic Greek, modal singing with microtonal intervals</p>
-    <audio controls preload="metadata" src="audio/odyssey-1.mp3"></audio>
-    <div class="links"><a href="https://www.youtube.com/">Watch on YouTube</a></div>
-  </div>
+<h3>Homer, <i>Odyssey</i>, Book 1</h3>
+<p class="small">About 35 minutes. Reconstructed early Archaic Greek, modal singing with microtonal intervals.</p>
+<div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Odyssey Book 1 recitation" allowfullscreen></iframe></div>
 
-  <div class="item">
-    <h3>Ṛgvedic hymns</h3>
-    <p class="meta">Reconstructed pronunciation, modal recitation with the pitch accent</p>
-    <audio controls preload="metadata" src="audio/rigveda.mp3"></audio>
-    <div class="links"><a href="https://www.youtube.com/">Watch on YouTube</a></div>
-  </div>
+<h3>Ṛgvedic hymns</h3>
+<p class="small">Reconstructed pronunciation, modal recitation with the pitch accent.</p>
+<div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Rigveda recitation" allowfullscreen></iframe></div>
 </section>
+
 
 <section id="verse">
-  <h2>Verse and translation</h2>
+<h2>Verse and translation</h2>
 
-  <h3>The Nāsadīya Sūkta (Ṛgveda 10.129)</h3>
-  <p class="meta">Translated with attention to etymology, syntax and pragmatics, in an English approximation of triṣṭubh. The red bar marks the caesura.</p>
-  <div class="trans" id="nasadiya"></div>
+<h3>The Nāsadīya Sūkta (Ṛgveda 10.129)</h3>
+<p class="small">Translated with attention to etymology, syntax and pragmatics, in an English approximation of triṣṭubh. The vertical bar marks the caesura.</p>
+<div class="poem">
+<p>Not the unreal | not then the real had been yet,<br>
+not the night sky | not the vault there beyond which;<br>
+What kept revolving? | Where? In whose surveillance?<br>
+Was unventured there | the river deep, celestial?</p>
 
-  <h3>A poem in reconstructed Proto-Indo-European</h3>
-  <p class="meta">A retelling of the king who prays to Werunos for a son, the story of <i>The King and the God</i>, continued. Laryngeals are written with phonetic values: ʔ for h₁, χ for h₂, ʁ for h₃.</p>
-  <div class="poem ipa" id="pie"></div>
+<p>Neither death was | nor immortality then;<br>
+Not night’s, not day’s | then had yet been horizon;<br>
+Airless, the One | which could breathe by Its impulse,<br>
+Other than that One, | none could have existed.</p>
+
+<p>Before in darkness | the dark had been engulfed,<br>
+when unforeseen | like a sea had this all been;<br>
+By emptiness held, | the One who emergent,<br>
+Emerged alone | from the heat then tremendous.</p>
+
+<p>A wish had turned | within the womb this infant,<br>
+A seed of mind | of the kind first who had been.<br>
+They found the bond | from real into the unreal,<br>
+The wise with wisdom | within beared who witness.</p>
+
+<p>Apart then snapped | traversing the string theirs,<br>
+So what was then under? | what was thereover?<br>
+Were there the makers? | or were miracles there?<br>
+Was autonomy | from before, choice thereafter?</p>
+
+<p>Who really knoweth? | Who indeed can today say…<br>
+“Whence is Universe | whence is Its creation”?<br>
+If Gods were sequent | to own their creation,<br>
+Who thus knoweth | whence this all could have arisen?</p>
+
+<p>Regardless whence | this all could have arisen…<br>
+Perchance created… | or whether perchance not…<br>
+The One—the witness | in heaven the highest…<br>
+Perchance he knoweth | What if perchance he doeth not?</p>
+</div>
+
+<h3>A poem in reconstructed Proto-Indo-European</h3>
+<p class="small">A retelling of the king who prays to Werunos for a son, the story of <i>The King and the God</i>, continued. Laryngeals are written with phonetic values: ʔ for h₁, χ for h₂, ʁ for h₃.</p>
+<div class="poem">
+<p>só ʁréːkʲs sénos, ʔjósjo súχnus né ʔeːst kʷís,<br>
+gʲʱéwtoːrm prkʲskʲet, "nú gʲnʔjojto súχnus!";<br>
+pró gʲʱéwtoːres, septḿ χindʱenti bʱolɡʲʱís,<br>
+dejwóm wérunom, ʔjégʲetχoːj kʷe wekʲsent.</p>
+
+<p>diwés χrétoj, léwkonts kʷe lowkéjents kʷe,<br>
+suχél né diwjós, wérunos pró prkʲskʲet:<br>
+"ʁréːɡʲ moj priχe, wlʔtóm ʔjód trís wlnʔswo<br>
+χrtóm wlnʔswo, wlʔtóm ʔójwom ʔésti".</p>
+
+<p>septḿdʱuɡʲχteːr, só ʁreːkʲs ulnʔto trís:<br>
+"súχnus súχnus, ɡʲnʔjojto súχnus ʔójwos!"<br>
+só kʲékʲluwoːns tóm, ʔsuméneːs ʔsumńsdʱeʔs,<br>
+wérunos wewkʷed, "tóteχ ʔestu" dejwós.</p>
+
+<p>ʔnéwn méːʔnses, péri kʷekʷlʔeːr wlnʔḿʔnom,<br>
+ʁréːgʲm ʔsudékʲsom, χrtopéχm nputlóm.<br>
+dejwíχ pótniχ, gʲegʲone septmméχteːr,<br>
+suχél né súχnum, diwióm wélʔistχom.</p>
+
+<p>podéj podej, ʔénu pχtréʔ kʷĺʔesjents,<br>
+diwéj diwej, só ʔsuwíʔros prowerdʱet.<br>
+só swekʲsdékʲm, ɡʲʱimóχom ʔébʱewχet,<br>
+kʲmtóm ɡʷʱentóːr, ndʱɡʷʱejókʲleweːs kʷe.</p>
+</div>
 </section>
 
+
 <section id="about">
-  <h2>About</h2>
-  <p>I grew up in southern India speaking Telugu, Hindi/Urdu and English, and came to linguistics through traditional Śikṣā and Ṛgveda recitation. At Stony Brook I study Information Systems and work with Jeffrey Heinz on computational morphophonology, and I have taken phonology, computational linguistics and research courses in linguistics.</p>
-  <dl>
-    <dt>Native</dt><dd>Telugu, Hindi, English</dd>
-    <dt>Spoken</dt><dd>Kannada</dd>
-    <dt>Reading</dt><dd>Sanskrit, Ancient Greek, Avestan, Old Persian, Old Telugu</dd>
-    <dt>Tools</dt><dd>Python, Pynini, finite-state methods</dd>
-    <dt>Music</dt><dd>Carnatic vocal (8 years), Western classical piano (12 years)</dd>
-  </dl>
+<h2>About</h2>
+<p>I grew up in southern India speaking Telugu, Hindi/Urdu and English, and came to linguistics through traditional Śikṣā and Ṛgveda recitation. At Stony Brook I study Information Systems and work with Jeffrey Heinz on computational morphophonology, and I have taken phonology, computational linguistics and research courses in linguistics.</p>
+<table>
+  <tr><td>Native</td><td>Telugu, Hindi, English</td></tr>
+  <tr><td>Spoken</td><td>Kannada</td></tr>
+  <tr><td>Reading</td><td>Sanskrit, Ancient Greek, Avestan, Old Persian, Old Telugu</td></tr>
+  <tr><td>Tools</td><td>Python, Pynini, finite-state methods</td></tr>
+  <tr><td>Music</td><td>Carnatic vocal (8 years), Western classical piano (12 years)</td></tr>
+</table>
 </section>
 
 </main>
 
 <footer>
-  <div class="wrap">
-    <div class="links">
-      <a href="mailto:koushikkvofficial@gmail.com">koushikkvofficial@gmail.com</a>
-      <a href="https://github.com/KoushikVaddi">GitHub</a>
-      <a href="https://www.linkedin.com/in/koushikkv">LinkedIn</a>
-      <a href="cv.pdf">CV (PDF)</a>
-    </div>
-    <p>Koushik Vaddi · Stony Brook, New York</p>
-  </div>
+  <p><a href="mailto:koushikkvofficial@gmail.com">koushikkvofficial@gmail.com</a> · <a href="https://github.com/KoushikVaddi">GitHub</a> · <a href="https://www.linkedin.com/in/koushikkv">LinkedIn</a> · <a href="cv.pdf">CV (PDF)</a></p>
+  <p>Koushik Vaddi · Stony Brook, New York</p>
 </footer>
 
-<script>
-{
-  // Scansion of RV 10.129.1a: H = heavy, L = light
-  const syl = [["nā","H"],["sa","L"],["dā","H"],["sīn","H"],["no","H"],["sa","L"],["dā","H"],["sīt","H"],["ta","L"],["dā","H"],["nīm","H"]];
-  document.getElementById("verse").innerHTML = syl.map(([t,w],i)=>
-    `<span class="syl${i>=7?" cad":""}${i===4?" cut":""}"><span class="m" aria-hidden="true">${w==="H"?"–":"⏑"}</span><span class="t">${t}</span><span class="n">${i+1}</span></span>`).join("");
-
-  // Nāsadīya translation, two-line couplets; "|" is the caesura
-  const nas = `Not the unreal | not then the real had been yet,
-not the night sky | not the vault there beyond which;
-What kept revolving? | Where? In whose surveillance?
-Was unventured there | the river deep, celestial?
-
-Neither death was | nor immortality then;
-Not night’s, not day’s | then had yet been horizon;
-Airless, the One | which could breathe by Its impulse,
-Other than that One, | none could have existed.
-
-Before in darkness | the dark had been engulfed,
-when unforeseen | like a sea had this all been;
-By emptiness held, | the One who emergent,
-Emerged alone | from the heat then tremendous.
-
-A wish had turned | within the womb this infant,
-A seed of mind | of the kind first who had been.
-They found the bond | from real into the unreal,
-The wise with wisdom | within beared who witness.
-
-Apart then snapped | traversing the string theirs,
-So what was then under? | what was thereover?
-Were there the makers? | or were miracles there?
-Was autonomy | from before, choice thereafter?
-
-Who really knoweth? | Who indeed can today say…
-“Whence is Universe | whence is Its creation”?
-If Gods were sequent | to own their creation,
-Who thus knoweth | whence this all could have arisen?
-
-Regardless whence | this all could have arisen…
-Perchance created… | or whether perchance not…
-The One—the witness | in heaven the highest…
-Perchance he knoweth | What if perchance he doeth not?`;
-
-  const pie = `só ʁréːkʲs sénos, ʔjósjo súχnus né ʔeːst kʷís,
-gʲʱéwtoːrm prkʲskʲet, "nú gʲnʔjojto súχnus!";
-pró gʲʱéwtoːres, septḿ χindʱenti bʱolɡʲʱís,
-dejwóm wérunom, ʔjégʲetχoːj kʷe wekʲsent.
-
-diwés χrétoj, léwkonts kʷe lowkéjents kʷe,
-suχél né diwjós, wérunos pró prkʲskʲet:
-"ʁréːɡʲ moj priχe, wlʔtóm ʔjód trís wlnʔswo
-χrtóm wlnʔswo, wlʔtóm ʔójwom ʔésti".
-
-septḿdʱuɡʲχteːr, só ʁreːkʲs ulnʔto trís:
-"súχnus súχnus, ɡʲnʔjojto súχnus ʔójwos!"
-só kʲékʲluwoːns tóm, ʔsuméneːs ʔsumńsdʱeʔs,
-wérunos wewkʷed, "tóteχ ʔestu" dejwós.
-
-ʔnéwn méːʔnses, péri kʷekʷlʔeːr wlnʔḿʔnom,
-ʁréːgʲm ʔsudékʲsom, χrtopéχm nputlóm.
-dejwíχ pótniχ, gʲegʲone septmméχteːr,
-suχél né súχnum, diwióm wélʔistχom.
-
-podéj podej, ʔénu pχtréʔ kʷĺʔesjents,
-diwéj diwej, só ʔsuwíʔros prowerdʱet.
-só swekʲsdékʲm, ɡʲʱimóχom ʔébʱewχet,
-kʲmtóm ɡʷʱentóːr, ndʱɡʷʱejókʲleweːs kʷe.`;
-
-  const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
-  document.getElementById("nasadiya").innerHTML = nas.split("\n\n").map(st =>
-    `<p>${st.split("\n").map(l => esc(l).replace(" | ",'<span class="cz">|</span>')).join("<br>")}</p>`).join("");
-  document.getElementById("pie").innerHTML = pie.split("\n\n").map(st =>
-    `<p>${st.split("\n").map(esc).join("<br>")}</p>`).join("");
-
-  // Hide an audio player whose file hasn't been added yet; the YouTube link stays
-  for (const a of document.querySelectorAll("audio")) a.addEventListener("error", () => a.remove());
-}
-</script>
 </body>
 </html>
